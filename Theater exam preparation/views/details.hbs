@@ -1,0 +1,27 @@
+<main>
+    <div class="container">
+
+        <section class="details">
+            <h1>{{data.title}}</h1>
+            <div>
+                <img src="{{data.imageUrl}}" />
+            </div>
+        </section>
+
+        <section class="details">
+            <h3>Theater Description</h3>
+            <p>{{data.description}}</p>
+            <div class="buttons">
+                {{#if itsOwner}}
+                <a class="btn delete" href="/auth/{{data._id}}/delete">Delete</a>
+                <a class="btn edit" href="/auth/{{data._id}}/edit">Edit</a>
+                {{/if}}
+                {{#if itsLike}}
+                <span class="liked">You have already liked this play!</span>
+                {{else}}
+                <a class="btn like" href="/auth/{{data._id}}/like">Like</a>
+                {{/if}}
+            </div>
+        </section>
+    </div>
+</main>
